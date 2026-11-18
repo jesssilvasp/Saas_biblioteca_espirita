@@ -1,0 +1,158 @@
+<div class="screen qwen-screen" id="screen-dashboard">
+            <!-- Header -->
+            <div class="gradient-header px-5 pt-6 pb-8 rounded-b-3xl dashboard-header">
+                <div class="flex items-center justify-between mb-5">
+                    <div>
+                        <p class="text-spirit-200 text-xs">Bem-vindo(a),</p>
+                        <h2 class="text-white text-lg font-bold" id="user-name">Bibliotecário</h2>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <button class="relative w-10 h-10 bg-white/10 rounded-xl flex items-center justify-center" data-action="go:screen-sync" aria-label="sync-alt text-white text-sm">
+                            <i class="fas fa-sync-alt text-white text-sm" aria-hidden="true"></i>
+                            <span class="absolute -top-1 -right-1 w-4 h-4 bg-warm-400 rounded-full text-[9px] text-white flex items-center justify-center font-bold" data-bind="local-events"></span>
+                        </button>
+                        <button class="relative w-10 h-10 bg-white/10 rounded-xl flex items-center justify-center" data-action="go:screen-notifications" aria-label="bell text-white text-sm">
+                            <i class="fas fa-bell text-white text-sm" aria-hidden="true"></i>
+                            <span class="absolute -top-1 -right-1 w-4 h-4 bg-red-500 rounded-full text-[9px] text-white flex items-center justify-center font-bold" data-bind="notification-count"></span>
+                        </button>
+                        <button class="w-10 h-10 bg-white/10 rounded-xl flex items-center justify-center" data-action="logout" aria-label="sign-out-alt text-white text-sm">
+                            <i class="fas fa-sign-out-alt text-white text-sm" aria-hidden="true"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Stats Row -->
+                <div class="grid grid-cols-3 gap-3">
+                    <div class="bg-white/10 rounded-xl p-3 text-center backdrop-blur-sm">
+                        <p class="text-2xl font-bold text-white" data-bind="book-count"></p>
+                        <p class="text-spirit-200 text-[10px] mt-0.5">Acervo Total</p>
+                    </div>
+                    <div class="bg-white/10 rounded-xl p-3 text-center backdrop-blur-sm">
+                        <p class="text-2xl font-bold text-warm-300" data-bind="active-count"></p>
+                        <p class="text-spirit-200 text-[10px] mt-0.5">Emprestados</p>
+                    </div>
+                    <div class="bg-white/10 rounded-xl p-3 text-center backdrop-blur-sm">
+                        <p class="text-2xl font-bold text-red-300" data-bind="late-count"></p>
+                        <p class="text-spirit-200 text-[10px] mt-0.5">Atrasados</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Content -->
+            <div class="flex-1 scroll-container px-5 py-5 space-y-6 pb-24 screen-body">
+                <!-- Quick Actions -->
+                <div>
+                    <h3 class="text-gray-800 font-bold text-sm mb-3">Ações Rápidas</h3>
+                    <div class="grid grid-cols-4 gap-3">
+                        <button class="action-btn flex flex-col items-center gap-1.5 p-3 bg-spirit-50 rounded-2xl" data-action="go:screen-scanner">
+                            <div class="w-11 h-11 bg-spirit-100 rounded-xl flex items-center justify-center">
+                                <i class="fas fa-camera text-spirit-600 text-lg" aria-hidden="true"></i>
+                            </div>
+                            <span class="text-[10px] text-gray-700 font-medium text-center leading-tight">Escanear</span>
+                        </button>
+                        <button class="action-btn flex flex-col items-center gap-1.5 p-3 bg-emerald-50 rounded-2xl" data-action="go:screen-acervo">
+                            <div class="w-11 h-11 bg-emerald-100 rounded-xl flex items-center justify-center">
+                                <i class="fas fa-book text-emerald-600 text-lg" aria-hidden="true"></i>
+                            </div>
+                            <span class="text-[10px] text-gray-700 font-medium text-center leading-tight">Acervo</span>
+                        </button>
+                        <button class="action-btn flex flex-col items-center gap-1.5 p-3 bg-violet-50 rounded-2xl" data-action="go:screen-cadastro-livro">
+                            <div class="w-11 h-11 bg-violet-100 rounded-xl flex items-center justify-center">
+                                <i class="fas fa-plus-circle text-violet-600 text-lg" aria-hidden="true"></i>
+                            </div>
+                            <span class="text-[10px] text-gray-700 font-medium text-center leading-tight">Cadastrar</span>
+                        </button>
+                        <button class="action-btn flex flex-col items-center gap-1.5 p-3 bg-amber-50 rounded-2xl" data-action="go:screen-cadastro-leitor">
+                            <div class="w-11 h-11 bg-amber-100 rounded-xl flex items-center justify-center">
+                                <i class="fas fa-user-plus text-amber-600 text-lg" aria-hidden="true"></i>
+                            </div>
+                            <span class="text-[10px] text-gray-700 font-medium text-center leading-tight">Leitor</span>
+                        </button>
+                        <button class="action-btn flex flex-col items-center gap-1.5 p-3 bg-pink-50 rounded-2xl" data-action="go:screen-ficha-ocr">
+                            <div class="w-11 h-11 bg-pink-100 rounded-xl flex items-center justify-center">
+                                <i class="fas fa-file-alt text-pink-600 text-lg" aria-hidden="true"></i>
+                            </div>
+                            <span class="text-[10px] text-gray-700 font-medium text-center leading-tight">Ficha</span>
+                        </button>
+                        <button class="action-btn flex flex-col items-center gap-1.5 p-3 bg-blue-50 rounded-2xl" data-action="go:screen-emprestimo">
+                            <div class="w-11 h-11 bg-blue-100 rounded-xl flex items-center justify-center">
+                                <i class="fas fa-arrow-up text-blue-600 text-lg" aria-hidden="true"></i>
+                            </div>
+                            <span class="text-[10px] text-gray-700 font-medium text-center leading-tight">Emprést.</span>
+                        </button>
+                        <button class="action-btn flex flex-col items-center gap-1.5 p-3 bg-teal-50 rounded-2xl" data-action="go:screen-devolucao">
+                            <div class="w-11 h-11 bg-teal-100 rounded-xl flex items-center justify-center">
+                                <i class="fas fa-arrow-down text-teal-600 text-lg" aria-hidden="true"></i>
+                            </div>
+                            <span class="text-[10px] text-gray-700 font-medium text-center leading-tight">Devolução</span>
+                        </button>
+                        <button class="action-btn flex flex-col items-center gap-1.5 p-3 bg-orange-50 rounded-2xl" data-action="go:screen-analise">
+                            <div class="w-11 h-11 bg-orange-100 rounded-xl flex items-center justify-center">
+                                <i class="fas fa-brain text-orange-600 text-lg" aria-hidden="true"></i>
+                            </div>
+                            <span class="text-[10px] text-gray-700 font-medium text-center leading-tight">Análise</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Alerts -->
+                <div class="space-y-3">
+                    <div class="flex items-center justify-between">
+                        <h3 class="text-gray-800 font-bold text-sm">Alertas</h3>
+                        <button class="text-spirit-600 text-xs font-medium" data-action="go:screen-notifications">Ver todos</button>
+                    </div>
+                    
+                    <div class="card-hover bg-red-50 border border-red-100 rounded-2xl p-4 flex items-center gap-3 cursor-pointer" data-action="go:screen-atrasados">
+                        <div class="w-10 h-10 bg-red-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-exclamation-triangle text-red-500" aria-hidden="true"></i>
+                        </div>
+                        <div class="flex-1 min-w-0">
+                            <p class="text-sm font-semibold text-gray-800" data-bind="late-alert"></p>
+                            <p class="text-xs text-gray-500 mt-0.5" data-bind="late-description"></p>
+                        </div>
+                        <i class="fas fa-chevron-right text-gray-300 text-sm" aria-hidden="true"></i>
+                    </div>
+                    
+                    <div class="card-hover bg-warm-50 border border-warm-100 rounded-2xl p-4 flex items-center gap-3 cursor-pointer" data-action="go:screen-analise">
+                        <div class="w-10 h-10 bg-warm-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-hourglass-half text-warm-600" aria-hidden="true"></i>
+                        </div>
+                        <div class="flex-1 min-w-0">
+                            <p class="text-sm font-semibold text-gray-800" data-bind="pending-alert"></p>
+                            <p class="text-xs text-gray-500 mt-0.5">Avaliação doutrinária pendente</p>
+                        </div>
+                        <i class="fas fa-chevron-right text-gray-300 text-sm" aria-hidden="true"></i>
+                    </div>
+                </div>
+
+                <!-- Active Loans -->
+                <div>
+                    <div class="flex items-center justify-between mb-3">
+                        <h3 class="text-gray-800 font-bold text-sm">Empréstimos Ativos</h3>
+                        <button class="text-spirit-600 text-xs font-medium" data-action="go:screen-emprestimos-lista">Ver todos</button>
+                    </div>
+                    <div class="space-y-2.5" data-slot="dashboard-loans"></div>
+                </div>
+
+                <!-- Recent Activity -->
+                <div>
+                    <div class="flex items-center justify-between mb-3">
+                        <h3 class="text-gray-800 font-bold text-sm">Movimentações Recentes</h3>
+                        <button class="text-spirit-600 text-xs font-medium" data-action="history">Histórico</button>
+                    </div>
+                    <div class="space-y-2" data-slot="history"></div>
+                </div>
+
+                <!-- New Books -->
+                <div>
+                    <div class="flex items-center justify-between mb-3">
+                        <h3 class="text-gray-800 font-bold text-sm">Novos Cadastros</h3>
+                        <button class="text-spirit-600 text-xs font-medium" data-action="go:screen-acervo">Ver acervo</button>
+                    </div>
+                    <div class="flex gap-3 overflow-x-auto pb-2 -mx-5 px-5" data-slot="new-books"></div>
+                </div>
+            </div>
+
+            <!-- Bottom Navigation -->
+            
+        </div>

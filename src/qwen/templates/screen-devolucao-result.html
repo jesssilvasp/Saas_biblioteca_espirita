@@ -1,0 +1,45 @@
+<div class="screen qwen-screen" id="screen-devolucao-result">
+            <div class="px-5 pt-6 pb-4 flex items-center gap-3 screen-header">
+                <button class="w-10 h-10 bg-gray-100 rounded-xl flex items-center justify-center" data-action="go:screen-devolucao" aria-label="Voltar">
+                    <i class="fas fa-arrow-left text-gray-600" aria-hidden="true"></i>
+                </button>
+                <h1 class="text-lg font-bold text-gray-800">Confirmar Devolução</h1>
+            </div>
+            <div class="flex-1 scroll-container px-5 pb-8 space-y-4 screen-body">
+                <div class="bg-emerald-50 border border-emerald-200 rounded-2xl p-5">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-12 h-16 bg-white rounded-xl flex items-center justify-center shadow-sm">
+                            <i class="fas fa-book text-spirit-400 text-xl" aria-hidden="true"></i>
+                        </div>
+                        <div>
+                            <p class="text-base font-bold text-gray-800" data-bind="return-title"></p>
+                            <p class="text-sm text-gray-600" data-bind="return-author"></p>
+                            <p class="text-xs text-gray-500" data-bind="return-code"></p>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-2 gap-3">
+                        <div class="bg-white/60 rounded-xl p-3">
+                            <p class="text-[10px] text-gray-500 uppercase">Leitor</p>
+                            <p class="text-sm font-semibold text-gray-800" data-bind="return-reader"></p>
+                        </div>
+                        <div class="bg-white/60 rounded-xl p-3">
+                            <p class="text-[10px] text-gray-500 uppercase">Data Retirada</p>
+                            <p class="text-sm font-semibold text-gray-800" data-bind="return-start"></p>
+                        </div>
+                        <div class="bg-white/60 rounded-xl p-3">
+                            <p class="text-[10px] text-gray-500 uppercase">Previsão</p>
+                            <p class="text-sm font-semibold text-gray-800" data-bind="return-due"></p>
+                        </div>
+                        <div class="bg-white/60 rounded-xl p-3">
+                            <p class="text-[10px] text-gray-500 uppercase">Situação</p>
+                            <p class="text-sm font-semibold text-emerald-700" data-bind="return-status"></p>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="w-full bg-teal-600 text-white py-4 rounded-xl font-bold text-base flex items-center justify-center gap-2 shadow-lg shadow-teal-200" data-action="confirm-return">
+                    <i class="fas fa-check-circle text-lg" aria-hidden="true"></i>
+                    CONFIRMAR DEVOLUÇÃO
+                </button>
+            </div>
+        </div>

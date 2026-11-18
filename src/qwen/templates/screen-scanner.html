@@ -1,0 +1,21 @@
+<div class="screen qwen-screen" id="screen-scanner">
+            <div class="px-5 pt-6 pb-4 flex items-center gap-3 screen-header">
+                <button class="w-10 h-10 bg-gray-100 rounded-xl flex items-center justify-center" data-action="go:screen-dashboard" aria-label="Voltar">
+                    <i class="fas fa-arrow-left text-gray-600" aria-hidden="true"></i>
+                </button>
+                <h1 class="text-lg font-bold text-gray-800">Escanear Livro</h1>
+            </div>
+            <div class="flex-1 flex flex-col items-center justify-center px-5 pb-8 capture-body">
+                <div class="w-full aspect-square max-w-[300px] bg-gray-900 rounded-3xl relative overflow-hidden mb-6" data-slot="camera"></div>
+                <div class="text-center space-y-2">
+                    <p class="text-gray-600 text-sm">Aponte a câmera para o código de barras do livro</p>
+                    <p class="text-gray-400 text-xs">Suporta ISBN-10, ISBN-13, EAN e códigos internos</p>
+                </div>
+                <div class="mt-6 flex gap-3 w-full">
+                    <button class="flex-1 bg-spirit-600 text-white py-3.5 rounded-xl font-semibold text-sm flex items-center justify-center gap-2" data-action="camera"><i class="fas fa-camera" aria-hidden="true"></i> Ativar câmera</button>
+                    <button class="bg-gray-100 text-gray-600 py-3.5 px-4 rounded-xl font-semibold text-sm" data-action="manual-code" aria-label="keyboard">
+                        <i class="fas fa-keyboard" aria-hidden="true"></i>
+                    </button>
+                </div>
+            <div data-slot="manual-code" class="w-full mt-4"></div></div>
+        </div>

@@ -1,0 +1,33 @@
+<div class="screen qwen-screen" id="screen-cadastro-leitor">
+            <div class="px-5 pt-6 pb-4 flex items-center gap-3 screen-header">
+                <button class="w-10 h-10 bg-gray-100 rounded-xl flex items-center justify-center" data-action="go:screen-dashboard" aria-label="Voltar">
+                    <i class="fas fa-arrow-left text-gray-600" aria-hidden="true"></i>
+                </button>
+                <h1 class="text-lg font-bold text-gray-800">Cadastrar Leitor</h1>
+            </div>
+            <div class="flex-1 scroll-container px-5 pb-8 space-y-4 screen-body">
+                <div class="bg-amber-50 border border-amber-100 rounded-2xl p-4">
+                    <p class="text-sm text-amber-800 mb-3">Como deseja cadastrar?</p>
+                    <div class="space-y-2.5">
+                        <button class="w-full bg-white border border-amber-200 rounded-xl p-4 flex items-center gap-3 text-left" data-action="go:screen-ficha-ocr">
+                            <div class="w-10 h-10 bg-amber-100 rounded-xl flex items-center justify-center">
+                                <i class="fas fa-camera text-amber-600" aria-hidden="true"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm font-semibold text-gray-800">Digitalizar ficha física</p>
+                                <p class="text-xs text-gray-500">Fotografar e extrair dados via OCR</p>
+                            </div>
+                        </button>
+                        <button class="w-full bg-white border border-amber-200 rounded-xl p-4 flex items-center gap-3 text-left" data-action="manual-reader">
+                            <div class="w-10 h-10 bg-amber-100 rounded-xl flex items-center justify-center">
+                                <i class="fas fa-pen text-amber-600" aria-hidden="true"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm font-semibold text-gray-800">Cadastro manual</p>
+                                <p class="text-xs text-gray-500">Preencher formulário</p>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+            <div data-slot="reader-form"></div><div data-slot="readers"></div></div>
+        </div>
